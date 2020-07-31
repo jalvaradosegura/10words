@@ -1,4 +1,4 @@
 .env
 .vscode
 __pycache__
-words/
+words/words*
