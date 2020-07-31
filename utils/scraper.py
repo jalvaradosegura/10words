@@ -4,11 +4,8 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
-from .environment_variables import set_environment_variables
-
 
 def scrape():
-    set_environment_variables()
     source = requests.get(
         'https://www.palabrasaleatorias.com/?fs=10&fs2=0&Submit=Nueva+palabra'
     ).content
