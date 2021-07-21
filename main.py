@@ -1,3 +1,4 @@
+# Testing
 import os
 from pathlib import Path
 
@@ -10,9 +11,7 @@ ENVIRONMENT_FILE = os.path.join(BASE_DIR, '.env')
 
 if __name__ == '__main__':
 
-    set_environment_variables(
-        os.path.join(BASE_DIR, '.env')
-    )
+    set_environment_variables(os.path.join(BASE_DIR, '.env'))
 
     scraper = CustomScraper(os.environ.get('URL_TO_SCRAPE'))
     output_file = scraper.scrape()
@@ -20,7 +19,7 @@ if __name__ == '__main__':
     with open(output_file) as email_body:
         email_sender = EmailSender(
             user=os.environ.get('EMAIL_USER'),
-            password=os.environ.get('EMAIL_PASSWORD')
+            password=os.environ.get('EMAIL_PASSWORD'),
         )
         email_sender.create_email(
             receivers=os.environ.get('EMAIL_RECEIVERS'),
